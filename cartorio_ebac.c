@@ -145,7 +145,8 @@ int main() { // Função principal -=-=- Menu e opções:
 		printf("Escolha a opção desejada do menu: \n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar os nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
+		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - Sair\n\n");
 		printf("Opção: "); //Fim do menu.
 	// Input do usuário:
 		scanf("%d", &opcao);
@@ -162,6 +163,11 @@ int main() { // Função principal -=-=- Menu e opções:
 			
 			case 3:
 				deletar();
+				break;
+				
+			case 4:
+				printf("Até logo! :D\n");
+				return 0;
 				break;
 				
 			default:
