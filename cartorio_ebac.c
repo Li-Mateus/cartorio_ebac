@@ -133,50 +133,66 @@ int main() { // Função principal -=-=- Menu e opções:
 	// Definição de variáveis:
 	int opcao = 0;
 	int laco = 1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	// Definição de linguagem:	
-		setlocale(LC_ALL, "Portuguese");	
-	// Início do laço -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=:	
-	for (laco = 1; laco = 1;) {
-		
-		system("cls"); // limpa o terminal.
-	// Menu:
-		printf("-=-=-=-=-=- Cartório - EBAC -=-=-=-=-=-\n\n");
-
-		printf("Escolha a opção desejada do menu: \n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar os nomes\n");
-		printf("\t3 - Deletar nomes\n");
-		printf("\t4 - Sair\n\n");
-		printf("Opção: "); //Fim do menu.
-	// Input do usuário:
-		scanf("%d", &opcao);
-		system("cls");
-	// Início da seleção:	
-		switch(opcao) {
-			case 1:
-				registro();
-				break;
+	setlocale(LC_ALL, "Portuguese");
+	// Validação básica de usuário:
+	printf("-=-=-=-=-=- Cartório - EBAC -=-=-=-=-=-\n\n");
+	printf("Login de administrador\n\nSenha: ");
+	scanf("%s", senhadigitada);
+	// comparando a senha digitada com a senha definida:
+	comparacao = strcmp(senhadigitada, "admin");
+	// Verifica se a senha digitada está correta, caso positivo, o restante será executado.
+	if (comparacao == 0) {
 			
-			case 2:
-				consulta();
-				break;
+		// Início do laço -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=:	
+		for (laco = 1; laco = 1;) {
 			
-			case 3:
-				deletar();
-				break;
+			system("cls"); // limpa o terminal.
+		// Menu:
+			printf("-=-=-=-=-=- Cartório - EBAC -=-=-=-=-=-\n\n");
+	
+			printf("Escolha a opção desejada do menu: \n\n");
+			printf("\t1 - Registrar nomes\n");
+			printf("\t2 - Consultar os nomes\n");
+			printf("\t3 - Deletar nomes\n");
+			printf("\t4 - Sair\n\n");
+			printf("Opção: "); //Fim do menu.
+		// Input do usuário:
+			scanf("%d", &opcao);
+			system("cls");
+		// Início da seleção:	
+			switch(opcao) {
+				case 1:
+					registro();
+					break;
 				
-			case 4:
-				printf("Até logo! :D\n");
-				return 0;
-				break;
+				case 2:
+					consulta();
+					break;
 				
-			default:
-				printf("Opção inválida :(\n\n");
-				system("pause");
-				break;
-		} //Fim da seleção.
-	}//Fim do laço.
+				case 3:
+					deletar();
+					break;
+					
+				case 4:
+					printf("Até logo! :D\n");
+					return 0;
+					break;
+					
+				default:
+					printf("Opção inválida :(\n\n");
+					system("pause");
+					break;
+			} //Fim da seleção.
+		}//Fim do laço.
+	}
+	// Caso a senha digitada estiver incorreta:
+	else
+		printf("Senha incorreta.");
 }
+
 
 // Créditos/ licenças:
 	//Software desenvolvido por Mateus Lima para fins educacionais.
